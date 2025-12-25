@@ -19,6 +19,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<MauiXaml Update="Views\ExpenseProposalHistoryPage.xaml">
+		  <Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
 		<MauiXaml Update="Views\LoginPage.xaml" />
 		<MauiXaml Update="Views\FundListPage.xaml" />
 		<MauiXaml Update="Views\AddFundPage.xaml" />

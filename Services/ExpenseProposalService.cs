@@ -102,4 +102,14 @@ public class ExpenseProposalService : IExpenseProposalService
         _conn.Update(dbProposal);
         return Task.CompletedTask;
     }
+    public Task<List<ExpenseProposal>> GetHistoryAsync()
+    {
+        var list = _conn.Table<ExpenseProposal>()
+            .Where(p => p.Status != ProposalStatus.Pending)
+            .OrderByDescending(p => p.ApprovedAt)
+            .ToList();
+
+        return Task.FromResult(list);
+    }
+
 }

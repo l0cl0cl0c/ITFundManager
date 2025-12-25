@@ -32,6 +32,11 @@
                                 Command="{Binding Source={x:Reference Page},
                                                   Path=BindingContext.RejectCommand}"
                                 CommandParameter="{Binding .}" />
+                            <Button
+                                Text="📜 Lịch sử duyệt"
+                                BackgroundColor="#EEEEEE"
+                                Clicked="OnOpenHistoryClicked"/>
+
                         </HorizontalStackLayout>
 
                     </VerticalStackLayout>

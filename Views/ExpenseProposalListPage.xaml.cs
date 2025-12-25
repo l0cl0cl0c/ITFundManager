@@ -24,4 +24,9 @@ public partial class ExpenseProposalListPage : ContentPage
         base.OnAppearing();
         await _viewModel.LoadAsync();
     }
+    private async void OnOpenHistoryClicked(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new ExpenseProposalHistoryPage());
+    }
+
 }

@@ -10,4 +10,6 @@ public interface IExpenseProposalService
 
     Task ApproveAsync(ExpenseProposal proposal, string approvedBy);
     Task RejectAsync(ExpenseProposal proposal, string approvedBy);
+    Task<List<ExpenseProposal>> GetHistoryAsync();
+
 }

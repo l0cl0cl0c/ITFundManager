@@ -29,6 +29,8 @@ public static class MauiProgram
         builder.Services.AddSingleton<IExpenseService, ExpenseService>();
         builder.Services.AddSingleton<IExpenseProposalService, ExpenseProposalService>();
         builder.Services.AddSingleton<ExpenseProposalListViewModel>();
+        builder.Services.AddTransient<ExpenseProposalHistoryViewModel>();
+        builder.Services.AddTransient<ExpenseProposalHistoryPage>();
 
 
         // APP STATE
