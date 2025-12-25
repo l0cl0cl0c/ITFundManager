@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Shell
+    x:Class="ITFundManager.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:views="clr-namespace:ITFundManager.Views"
+    Shell.FlyoutBehavior="Flyout">
+
+    <!-- 📌 DANH SÁCH QUỸ -->
+    <ShellContent
+        Title="Quản lý quỹ"
+        Route="fundlist"
+        ContentTemplate="{DataTemplate views:FundListPage}" />
+
+    <!-- 📌 DUYỆT ĐỀ XUẤT CHI -->
+    <ShellContent
+        Title="Duyệt chi tiêu"
+        Route="expenseproposallist"
+        ContentTemplate="{DataTemplate views:ExpenseProposalListPage}" />
+    <ShellContent
+        Route="addfund"
+        ContentTemplate="{DataTemplate views:AddFundPage}" />
+    <ShellContent
+        Title="Thêm đề xuất chi"
+        Route="addexpenseproposal"
+        ContentTemplate="{DataTemplate views:AddExpenseProposalPage}" />
+    
+
+
+
+
+
+
+</Shell>

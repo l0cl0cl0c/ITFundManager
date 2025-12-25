@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="ITFundManager.Views.AddFundPage"
+    Title="{Binding Title}">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="12">
+
+            <Entry Placeholder="Tên quỹ"
+                   Text="{Binding Name}" />
+    
+            <Entry Placeholder="Loại quỹ"
+                   Text="{Binding Type}" />
+
+            <Entry Placeholder="Số dư"
+                   Keyboard="Numeric"
+                   Text="{Binding Balance}" />
+
+            <Editor Placeholder="Ghi chú"
+                    AutoSize="TextChanges"
+                    Text="{Binding Note}" />
+
+            <Button Text="💾 Lưu"
+                    Command="{Binding SaveCommand}"
+                    BackgroundColor="#4CAF50"
+                    TextColor="White" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

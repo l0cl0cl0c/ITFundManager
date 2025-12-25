@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="ITFundManager.Views.AddExpenseProposalPage"
+    Title="Đề xuất chi tiêu">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="16">
+
+            <Entry
+                Placeholder="Tiêu đề đề xuất"
+                Text="{Binding Title}" />
+
+            <Editor
+                Placeholder="Nội dung / lý do chi"
+                AutoSize="TextChanges"
+                HeightRequest="100"
+                Text="{Binding Reason}" />
+
+            <Entry
+                Placeholder="Số tiền"
+                Keyboard="Numeric"
+                Text="{Binding Amount}" />
+
+            <Button
+                Text="📤 Gửi đề xuất"
+                Command="{Binding SaveCommand}"
+                BackgroundColor="#1976D2"
+                TextColor="White" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

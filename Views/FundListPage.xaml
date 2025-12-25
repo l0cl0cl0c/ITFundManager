@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="ITFundManager.Views.FundListPage"
+    Title="Danh sách quỹ">
+
+    <!-- 🔹 NÚT THÊM QUỸ -->
+    <ContentPage.ToolbarItems>
+        <ToolbarItem
+            Text="➕ Thêm"
+            Clicked="OnAddClicked" />
+    </ContentPage.ToolbarItems>
+
+    <VerticalStackLayout Padding="12" Spacing="12">
+
+        <!-- 📄 NÚT DUYỆT ĐỀ XUẤT CHI -->
+        <Button
+            Text="📄 Duyệt đề xuất chi"
+            BackgroundColor="#5A67D8"
+            TextColor="White"
+            Clicked="OnOpenProposalListClicked" />
+
+        <!-- 📋 DANH SÁCH QUỸ -->
+        <CollectionView ItemsSource="{Binding Funds}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame Padding="10" Margin="6" BorderColor="#DDD">
+                        <VerticalStackLayout Spacing="6">
+
+                            <Label
+                                Text="{Binding Name}"
+                                FontSize="18"
+                                FontAttributes="Bold" />
+
+                            <Label
+                                Text="{Binding Balance, StringFormat='Số dư: {0:N0} đ'}"
+                                TextColor="DarkGreen" />
+
+                            <HorizontalStackLayout Spacing="12">
+                                
+                                <Button
+                                    Text="✏️ Sửa"
+                                    Clicked="OnEditClicked"
+                                    CommandParameter="{Binding .}" />
+                                <Button
+                                    Text="💸 Đề xuất chi"
+                                    BackgroundColor="#ED8936"
+                                    TextColor="White"
+                                    Clicked="OnAddProposalClicked"
+                                    CommandParameter="{Binding .}" />
+
+
+                                <Button
+                                    Text="🗑 Xóa"
+                                    TextColor="Red"
+                                    Clicked="OnDeleteClicked"
+                                    CommandParameter="{Binding .}" />
+                            </HorizontalStackLayout>
+
+                        </VerticalStackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+    </VerticalStackLayout>
+</ContentPage>
